@@ -1,0 +1,43 @@
+:root {
+  --bg-page-light: white;
+  --bg-primary-light: black;
+  --fg-primary-light: black;
+  --fg-on-primary-light: white;
+
+  --bg-page-dark: black;
+  --bg-primary-dark: white;
+  --fg-primary-dark: white;
+  --fg-on-primary-dark: black;
+}
+/* regarding resets */
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-page);
+  gap: 24px;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 424px;
+  gap: 12px;
+}
+
+.messageContainer {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 24px;
+  color: var(--fg-on-primary);
+  background-color: var(--bg-primary);
+  gap: 24px;
+  width: 424px;
+}
