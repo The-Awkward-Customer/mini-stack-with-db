@@ -9,7 +9,7 @@ myForm.addEventListener("submit", (event) => {
   // converts my formData object into a regular JS object
   const formValues = Object.fromEntries(formData);
 
-  fetch("//localhost:8080/messages", {
+  fetch("https://server-9daa.onrender.com/messages", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(formValues),
@@ -20,7 +20,7 @@ myForm.addEventListener("submit", (event) => {
 
 async function getMessages() {
   //get messages from db via api
-  const response = await fetch("//localhost:8080/messages");
+  const response = await fetch("https://server-9daa.onrender.com/messages");
   const messages = await response.json();
   //loop through the messages and render each on on the page.
 
