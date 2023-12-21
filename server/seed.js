@@ -4,7 +4,8 @@ const db = new Database("database.db");
 
 db.exec(`CREATE TABLE IF NOT EXISTS messages(
     username TEXT,
-    message TEXT
+    message TEXT,
+    identification INT,
 )`);
 
 const insertNewMessage = db.prepare(
