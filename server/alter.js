@@ -2,7 +2,7 @@ import Database from "better-sqlite3";
 
 const db = new Database("database.db");
 
-try {
+const migrateData = db.transaction(() => {
   db.exec(`
 CREATE TABLE new_messages(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,6 +22,10 @@ INSERT INTO new_messages (username, message)
   db.exec(`ALTER TABLE new_messages RENAME TO messages;`);
 
   console.log("ID column added successfully, and data migrated.");
+});
+
+try {
+  migrateData();
 } catch (error) {
   console.error("Error during the process:", error.message);
 } finally {
