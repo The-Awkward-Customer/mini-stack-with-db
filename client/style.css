@@ -1,19 +1,39 @@
+/* Define color variables for light and dark themes */
 :root {
-  --bg-page-light: white;
-  --bg-primary-light: black;
-  --fg-primary-light: black;
-  --fg-on-primary-light: white;
+  --bg-page-light: #ffffff; /* Light background */
+  --bg-primary-light: #eeeeee; /* Light primary color */
+  --fg-primary-light: #333333; /* Light foreground color */
+  --fg-on-primary-light: #111111; /* Light on primary color */
 
-  --bg-page-dark: black;
-  --bg-primary-dark: white;
-  --fg-primary-dark: white;
-  --fg-on-primary-dark: black;
+  --bg-page-dark: #333333; /* Dark background */
+  --bg-primary-dark: #222222; /* Dark primary color */
+  --fg-primary-dark: #ffffff; /* Dark foreground color */
+  --fg-on-primary-dark: #dddddd; /* Dark on primary color */
 }
+
+/* Default light theme */
+:root {
+  --bg-page: var(--bg-page-light);
+  --bg-primary: var(--bg-primary-light);
+  --fg-primary: var(--fg-primary-light);
+  --fg-on-primary: var(--fg-on-primary-light);
+}
+
+/* Dark theme when .dark-theme class is added to the root */
+.dark-theme {
+  --bg-page: var(--bg-page-dark);
+  --bg-primary: var(--bg-primary-dark);
+  --fg-primary: var(--fg-primary-dark);
+  --fg-on-primary: var(--fg-on-primary-dark);
+}
+
 /* regarding resets */
 * {
   margin: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Handles transition for all elements */
+  transition: all 0.2s;
 }
 
 body {

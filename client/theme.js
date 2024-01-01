@@ -8,15 +8,11 @@ document.getElementById("themeBtn").addEventListener("click", function () {
 
   if (clicked === false) {
     // Switch to dark theme
-    root.style.setProperty("--bg-page", "var(--bg-page-dark)");
-    root.style.setProperty("--bg-primary", "var(--bg-primary-dark)");
-    root.style.setProperty("--fg-primary", "var(--fg-primary-dark)");
-    root.style.setProperty("--fg-on-primary", "var(--fg-on-primary-dark)");
+    root.classList.add("dark-theme");
+    console.log("dark enabled");
   } else {
     // Switch to light theme
-    root.style.setProperty("--bg-page", "var(--bg-page-light)");
-    root.style.setProperty("--bg-primary", "var(--bg-primary-light)");
-    root.style.setProperty("--fg-primary", "var(--fg-primary-light)");
-    root.style.setProperty("--fg-on-primary", "var(--fg-on-primary-light)");
+    root.classList.remove("dark-theme");
+    console.log("light enabled");
   }
 });
